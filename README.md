@@ -1,4 +1,4 @@
-# Fuerte-Workout-Tracker
+# Fuerte: Workout Tracker
 ## Date: July 24, 2022
 ### By: Jacquelin Velasquez
 #### [ERD](https://app.diagrams.net/#G1s5MLKk-EWKgpw2Q3-UUyX-vYaUTL1WFe) | [Trello](https://trello.com/b/HXIqTxIF/workout-tracker)
@@ -15,7 +15,7 @@
 #### [Exercise View](https://lucid.app/lucidchart/e72c1829-94ad-4950-ad4d-2582cf10b42a/edit?page=0_0&invitationId=inv_1d6963a9-152e-4651-ad97-8c99a1160b80#)
 ***
 
-#### ***Technologies Used***
+### ***Technologies Used***
 * React
 * Express
 * MongoDB
