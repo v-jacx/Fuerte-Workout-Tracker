@@ -5,7 +5,7 @@
 ***
 
 ### ***Description***
-#### Fuerte is a workout tracker built with React, express, and MongoDB.  This workout tracker users to create workouts and track their PRs, sets and reps, and Max working weight.
+#### Fuerte is a workout tracker built with React, express, and MongoDB.  This workout tracker allows users to create workouts and track their PRs, sets and reps, and Max working weight.
 ***
 
 ### ***Wireframes***
