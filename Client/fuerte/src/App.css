@@ -1,0 +1,51 @@
+html{
+    background-color: #0a0a0a;
+}
+img{
+    height: 50px;
+    width: 40px;
+}
+.App{
+    background: linear-gradient(#68517f,#0a0a0a);
+    background-size: cover;
+}
+.body{
+    height: 25px;
+    width: 20px;
+    background: linear-gradient(#bebebe,#808080);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-right: 1rem;
+    margin-top: -1px;
+}
+.fuerte-logo{
+    margin-left: 8px;
+}
+.head{
+    height: 20px;
+    width: 10px;
+    border-radius: 100%;
+    background: linear-gradient(#ffffff,#b4b4b4);
+    margin-left: 5px;
+    margin-top: 4px;
+}
+
+.landing{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.large-logo{
+    height: 700px;
+    width: 600px;
+}
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
