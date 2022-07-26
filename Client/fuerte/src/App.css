@@ -9,6 +9,20 @@ img{
     background: linear-gradient(#68517f,#0a0a0a);
     background-size: cover;
 }
+
+.add{
+    background-color: transparent;
+    border: none;
+    font-weight: bolder;
+    position: absolute;
+    margin-top: -4px;
+    font-size: 30px;
+}
+
+
+.add-workout{
+    margin-left: 20rem;
+}
 .body{
     height: 25px;
     width: 20px;
@@ -18,9 +32,25 @@ img{
     margin-right: 1rem;
     margin-top: -1px;
 }
+.display{
+    background-color: transparent;
+    width: 55rem;
+}
+
+.exercise-add{
+    margin-left: 52rem;
+}
+
+.form-container{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
 .fuerte-logo{
     margin-left: 8px;
 }
+
 .head{
     height: 20px;
     width: 10px;
@@ -28,6 +58,12 @@ img{
     background: linear-gradient(#ffffff,#b4b4b4);
     margin-left: 5px;
     margin-top: 4px;
+}
+.home{
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    height: 30rem;
 }
 
 .landing{
@@ -45,7 +81,49 @@ img{
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+.title{
+    width: 50rem;
+    height: 2rem;
+    background-color: transparent;
+    border: none;
+}
+
+.title::placeholder{
+    text-align: center;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.254);
+}
+.workout{
+border: 1px solid rgba(255, 255, 255, 0.252);
+border-radius: 10px;
+display: flex;
+justify-content: center;
+width: 25rem;
+}
+
+.workout-container{
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    margin-top: 4rem;
+}
+
+.workout-label{
+    height: 2rem;
+    background-color: rgba(0, 0, 0, 0.15);
+}
 
 
+.workout-title{
+    background: transparent;
+    display:flex;
+    flex-direction: row;
+}
 
+#workout-label{
+    font-size: 20px;
+    margin-top: 3px;
+}
 
+#workout-title{
+    margin-top: 5px;
+}

@@ -65,39 +65,52 @@ const setInfo = async (req, res)=>{
     }
 }
 
-const getAllUserWorkoutIds = async (req, res)=>{
+const getWorkoutById = async (req, res)=>{
     try{
     const {id} = req.params
-    const user = await User.findById(id)
+    const workout = await Workout.findById(id)
 
-    const workouts = user.workouts
-    
-    return res.status(201).json({workouts})
+    return res.status(201).json({workout})
+    }catch(e){
+        return res.status(500).json({error: e.message})
+    }
+}
+
+const getExerciseById = async (req, res)=>{
+    try{
+        const {id} = req.params
+        const exercise = await Exercise.find(id)
+
+        return res.status(201).json({exercise})
+    }catch(e){
+        return res.status(500).json({error: e.message})
+    }
+}
+
+
+const updatePR = async (req, res)=>{
+   try{ 
+        const {id, personalR} = req.body
+        Exercise.findByIdAndUpdate(id, {personalRecord: personalR},(err, result)=>{
+            if(err){res.send(err)}
+            else{res.send(result)}
+        })
+
+        res.status(201).json('updated')
 }catch(e){
-    res.status(500).json({error: e.message})
-}
-}
-
-const getUserWorkouts = async (req, res)=>{
-    try{
-    const workouts = await Workout.find({userId: req.params.userID})
-
-    return res.status(201).json({workouts})
-    }catch(e){
-        return res.status(500).json({error: e.message})
-    }
+    return res.status(500).json({error: e.message})
 }
 
-const getExercisesInWorkout = async (req, res)=>{
-    try{
-        const exercises = await Exercise.find({workoutId: req.params.workoutID})
-
-        return res.status(201).json({exercises})
-    }catch(e){
-        return res.status(500).json({error: e.message})
-    }
 }
 
+const getUser = async (req, res)=>{
+   try{
+        const user = await User.find({'name': req.body.name})
+        return res.status(201).json({user})
+   }catch(e){
+    return res.status(500).json({error: e.message})
+   }
+}
 
 const login = async (req, res)=>{
 
@@ -119,22 +132,6 @@ const login = async (req, res)=>{
         return res.status(500).json({error: e.message})
     }
 }
-
-const updatePR = async (req, res)=>{
-   try{ 
-        const {id, personalR} = req.body
-        Exercise.findByIdAndUpdate(id, {personalRecord: personalR},(err, result)=>{
-            if(err){res.send(err)}
-            else{res.send(result)}
-        })
-
-        res.status(201).json('updated')
-}catch(e){
-    return res.status(500).json({error: e.message})
-}
-
-}
-
 module.exports = {
-    createUser, login, createWorkout, createExercise, setInfo, getAllUserWorkoutIds, getUserWorkouts, getExercisesInWorkout, updatePR,
+    createUser, login, createWorkout, createExercise, setInfo, getWorkoutById, getExerciseById, updatePR, getUser,
 }

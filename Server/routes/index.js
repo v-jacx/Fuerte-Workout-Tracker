@@ -14,11 +14,11 @@ router.post('/exercise', controllers.createExercise)
 
 router.post('/setInfo', controllers.setInfo)
 
-router.get('/getWorkoutsId/:id', controllers.getAllUserWorkoutIds)
+router.get('/workout/:id', controllers.getWorkoutById)
 
-router.get('/getWorkouts/:userID', controllers.getUserWorkouts)
+router.get('/exercise/:id', controllers.getExerciseById)
 
-router.get('/getWorkoutExercises/:workoutID', controllers.getExercisesInWorkout)
+router.get('/user', controllers.getUser)
 
 router.put('/updatePR', controllers.updatePR)
 
