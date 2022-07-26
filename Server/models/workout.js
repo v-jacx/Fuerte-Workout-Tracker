@@ -1,11 +1,11 @@
 const {Schema, mongoose} = require('mongoose')
-const Exercise = require('./exercise')
 
-const Workout = new Schema(
+const WorkoutSchema = new Schema(
     {
         name: {type: String, required: true},
-        exercises:[Exercise]
+        exercises:[{type: Schema.Types.ObjectId, ref: 'Exercise'}],
+        userId: {type: Schema.Types.ObjectId, ref: 'User', required: true}
     }
 )
 
-module.exports = mongoose.model('Workout', Workout)
+module.exports = mongoose.model('Workout', WorkoutSchema)
