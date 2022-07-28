@@ -98,14 +98,14 @@ const updatePR = async (req, res)=>{
 
         res.status(201).json('updated')
 }catch(e){
-    return res.status(500).json({error: e.message})
+    console.log(e)
 }
 
 }
 
 const getUser = async (req, res)=>{
    try{
-        const user = await User.find({'name': req.body.name})
+        const user = await User.find({'name': req.query.name})
         return res.status(201).json({user})
    }catch(e){
     return res.status(500).json({error: e.message})
