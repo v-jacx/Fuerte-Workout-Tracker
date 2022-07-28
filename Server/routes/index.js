@@ -14,7 +14,7 @@ router.post('/exercise', controllers.createExercise)
 
 router.post('/setInfo', controllers.setInfo)
 
-router.get('/workout/:id', controllers.getWorkoutById)
+router.get('/workout/:id', controllers.getUserWorkouts)
 
 router.get('/exercise/:id', controllers.getExerciseById)
 

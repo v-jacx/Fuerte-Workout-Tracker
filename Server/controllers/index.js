@@ -65,12 +65,19 @@ const setInfo = async (req, res)=>{
     }
 }
 
-const getWorkoutById = async (req, res)=>{
+const getUserWorkouts = async (req, res)=>{
     try{
     const {id} = req.params
-    const workout = await Workout.findById(id)
+    const user = await User.findById(id)
+    const workouts = user.workouts
+    const userWorkouts = []
 
-    return res.status(201).json({workout})
+    for(let i=0; i< workouts.length; i++){
+        const workout = await Workout.findById(workouts[i])
+        userWorkouts.push(workout)
+    }
+
+    return res.status(201).json({userWorkouts})
     }catch(e){
         return res.status(500).json({error: e.message})
     }
@@ -133,5 +140,5 @@ const login = async (req, res)=>{
     }
 }
 module.exports = {
-    createUser, login, createWorkout, createExercise, setInfo, getWorkoutById, getExerciseById, updatePR, getUser,
+    createUser, login, createWorkout, createExercise, setInfo, getUserWorkouts, getExerciseById, updatePR, getUser,
 }

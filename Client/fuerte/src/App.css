@@ -39,6 +39,9 @@ img{
     background-color: transparent;
     width: 55rem;
 }
+.exercise{
+    margin-top: 3px;
+}
 .exercise-container{
     height: 20rem;
     overflow-y: auto;
