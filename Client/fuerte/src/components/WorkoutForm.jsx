@@ -28,7 +28,7 @@ export default function WorkoutForm(props){
         setInputData(array)
      }
 
-     const handleSubmit = async (e)=>{
+     const handleSubmit = async ()=>{
         if(isWorkoutActive===true){
        const res = await axios.post('http://localhost:3001/api/workout',{
         name: workoutTitle,

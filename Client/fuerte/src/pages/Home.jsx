@@ -2,6 +2,7 @@ import WorkoutDisplay from "../components/WorkoutDisplay";
 import WorkoutForm from "../components/WorkoutForm";
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 
 
 export default function Home(){
@@ -19,6 +20,7 @@ const getUser = async () =>{
 useEffect(()=>{
     getUser()
 },[])
+
 
 const handleClick=()=>{
     setIsActive(true);

@@ -8,7 +8,7 @@ const createUser = async (req, res)=> {
     try{
         const user = await new User(req.body)
         await user.save()
-        return res.status(201).json({
+        return res.status(200).json({
             user,
         })
     }catch(e){
@@ -25,7 +25,7 @@ const createWorkout = async (req, res) =>{
 
         const user = await User.findByIdAndUpdate(user_id, {$push: {workouts: workout._id}})
 
-        return res.status(201).json(workout)
+        return res.status(200).json(workout)
         
     }catch(e){
         return res.status(500).json({error: e.message})
@@ -41,7 +41,7 @@ const createExercise = async (req, res) =>{
 
         const workout = await Workout.findByIdAndUpdate(workout_id, {$push: {exercises: exercise._id}})
 
-        return res.status(201).json({exercise})
+        return res.status(200).json({exercise})
 
     }catch(e){
         return res.status(500).json({error: e.message})
@@ -55,10 +55,10 @@ const setInfo = async (req, res)=>{
 
         const exercise_id = info.exerciseId
 
-        const exercise = await Exercise.findByIdAndUpdate(exercise_id, {$push: {info: info._id}})
+        await Exercise.findByIdAndUpdate(exercise_id, {$push: {info: info._id}})
 
 
-        return res.status(201).json('info saved')
+        return res.status(200).json('info saved')
 
     }catch(e){
         return res.status(500).json({error: e.message})
@@ -77,33 +77,55 @@ const getUserWorkouts = async (req, res)=>{
         userWorkouts.push(workout)
     }
 
-    return res.status(201).json({userWorkouts})
+    return res.status(200).json({userWorkouts})
     }catch(e){
         return res.status(500).json({error: e.message})
     }
 }
 
-const getExerciseById = async (req, res)=>{
+const getWorkoutExercises= async (req, res)=>{
     try{
         const {id} = req.params
-        const exercise = await Exercise.find(id)
+        const workout = await Workout.findById(id)
+        const workoutsExercises = workout.exercises
+        const exercises = []
 
-        return res.status(201).json({exercise})
+        for(let i=0; i< workoutsExercises.length; i++){
+            const exercise = await Exercise.findById(workoutsExercises[i])
+            exercises.push(exercise)
+        }
+
+        return res.status(200).json({exercises})
     }catch(e){
         return res.status(500).json({error: e.message})
     }
 }
 
+const getExerciseInfo = async(req, res)=>{
+    try{
+        const {id} = req.params
+        const exercise = await Exercise.findById(id)
+        const infoID = exercise.info
+        const info = []
+
+        for(let i=0; i< infoID.length; i++){
+            const currentInfo = await Info.findById(infoID[i])
+            info.push(currentInfo)
+        }
+        res.status(200).json({info})
+    }catch(e){
+        res.status(500).json({error: e.message})
+    }
+}
 
 const updatePR = async (req, res)=>{
    try{ 
         const {id, personalR} = req.body
         Exercise.findByIdAndUpdate(id, {personalRecord: personalR},(err, result)=>{
-            if(err){res.send(err)}
+            if(err){console.log(err)}
             else{res.send(result)}
         })
 
-        res.status(201).json('updated')
 }catch(e){
     console.log(e)
 }
@@ -113,7 +135,7 @@ const updatePR = async (req, res)=>{
 const getUser = async (req, res)=>{
    try{
         const user = await User.find({'name': req.query.name})
-        return res.status(201).json({user})
+        return res.status(200).json({user})
    }catch(e){
     return res.status(500).json({error: e.message})
    }
@@ -140,5 +162,5 @@ const login = async (req, res)=>{
     }
 }
 module.exports = {
-    createUser, login, createWorkout, createExercise, setInfo, getUserWorkouts, getExerciseById, updatePR, getUser,
+    createUser, login, createWorkout, createExercise, setInfo, getUserWorkouts, getWorkoutExercises, updatePR, getUser, getExerciseInfo,
 }

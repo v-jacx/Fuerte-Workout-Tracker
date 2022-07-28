@@ -16,10 +16,13 @@ router.post('/setInfo', controllers.setInfo)
 
 router.get('/workout/:id', controllers.getUserWorkouts)
 
-router.get('/exercise/:id', controllers.getExerciseById)
+router.get('/exercise/:id', controllers.getWorkoutExercises)
 
 router.get('/user', controllers.getUser)
 
+router.get('/info/:id', controllers.getExerciseInfo)
+
 router.put('/updatePR', controllers.updatePR)
+
 
 module.exports = router;
