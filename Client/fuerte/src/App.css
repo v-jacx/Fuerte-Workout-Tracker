@@ -19,6 +19,9 @@ img{
     font-size: 30px;
 }
 
+.add-exercise{
+    margin-left: 20px;
+}
 
 .add-workout{
     margin-left: 20rem;
@@ -36,13 +39,38 @@ img{
     background-color: transparent;
     width: 55rem;
 }
+.exercise-container{
+    height: 20rem;
+    overflow-y: auto;
+}
+
+.exercise-container::-webkit-scrollbar{
+    width: 1rem;
+
+}
+.exercise-container::-webkit-scrollbar-track{
+    background-color:#68517f;
+    border-radius: 5px;
+}
+
+.exercise-container::-webkit-scrollbar-thumb{
+    background-color: #41324c77;
+    width: 3px;
+}
 
 .exercise-add{
     margin-left: 52rem;
+    margin-top: 2px;
+}
+
+.form{
+    display: flex;
+    justify-content: space-between;
 }
 
 .form-container{
     display: flex;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.15);
     border-radius: 10px;
 }
@@ -79,6 +107,21 @@ img{
     display: flex;
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn{
+    background-color: transparent;
+    text-align: center;
+    top: 30rem;
+    right: 30%;
+    position: absolute;
+}
+
+.submit-form{
+    background-color: #ba99f882;
+    border-radius: 5px;
+    width: 6rem;
+    height: 2rem;
 }
 
 .title{
@@ -119,11 +162,20 @@ width: 25rem;
     flex-direction: row;
 }
 
+#form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 #workout-label{
     font-size: 20px;
     margin-top: 3px;
 }
 
-#workout-title{
+#workout-title, #exercise-title{
     margin-top: 5px;
+    text-align: center;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.772);
 }

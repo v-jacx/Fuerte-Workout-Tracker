@@ -1,8 +1,24 @@
 import WorkoutDisplay from "../components/WorkoutDisplay";
 import WorkoutForm from "../components/WorkoutForm";
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
+import axios from 'axios'
+
+
 export default function Home(){
+const [user, setUser]= useState()
 const [isActive, setIsActive] = useState(false)
+const userName = 'v-jacx'
+
+const getUser = async () =>{
+    const newUser = await axios.get(`http://localhost:3001/api/user?name=${userName}`)
+    setUser(newUser.data.user[0])
+    }    
+    
+
+
+useEffect(()=>{
+    getUser()
+},[])
 
 const handleClick=()=>{
     setIsActive(true);
@@ -11,10 +27,10 @@ const handleClick=()=>{
 return (
     <div className='home'>
          <div className='workout-container'>
-            <WorkoutDisplay handleClick={handleClick}/>
+            <WorkoutDisplay handleClick={handleClick} user={user}/>
             </div>
         <div className="display workout-container">
-            {isActive? <WorkoutForm/>:''}
+            {isActive? <WorkoutForm user={user}/>:''}
         </div>
     </div>
 );
