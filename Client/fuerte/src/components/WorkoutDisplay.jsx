@@ -11,6 +11,8 @@ export default function WorkoutDisplay(props){
     const userID = user._id
     const userWorkoutIds = user.workouts
 
+    console.log(userWorkoutIds)
+
     const showWorkout = (workout)=>{
         navigate(`${workout.name}`,{state:{name: `${workout.name}`,id: `${workout._id}`}})
     }

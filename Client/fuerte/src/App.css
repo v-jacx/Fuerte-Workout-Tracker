@@ -31,6 +31,18 @@ img{
 .add-workout{
     margin-left: 20rem;
 }
+
+.account-text{
+    font-size: 13px;
+    text-align: center;
+}
+
+.account-link{
+    color: rgb(0, 81, 255);
+    background-color: transparent;
+    border: none;
+}
+
 .body{
     height: 25px;
     width: 20px;
@@ -130,11 +142,33 @@ img{
     height: 700px;
     width: 600px;
 }
+
+.login{
+    background-color: white;
+    position: absolute;
+}
+
+.login-container{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    height: 19rem;
+    width: 15rem;
+    background-color: white;
+    margin-left: 87%;
+    position: absolute;
+}
+
+.login-logo{
+    margin-top: 7%;
+    margin-bottom: 0;
+}
 .nav-bar{
     display: flex;
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.2);
 }
+
 
 
 .submit-btn{
@@ -168,6 +202,17 @@ img{
 .tracking-labels{
     height: 1.5rem;
     width: 8rem;
+}
+
+.signup-container{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    background-color: #b4b4b45d;
+    height: 30rem;
+    width: 20rem;
+    margin-left: 50%;
+    margin-top: 6%;
 }
 
 .workout{
@@ -249,6 +294,25 @@ width: 25rem;
     margin-top: 2px;
 }
 
+#login-btn{
+    margin-left: 3rem;
+    margin-top: 1rem;
+}
+
+#login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-label{
+    margin-top:2%;
+    margin-bottom: 20%;
+    padding-right: 10px;
+    color: #ffffff;
+}
+
 #max-weight, #elem-maxWeight{
     padding-right: 8%;
 }
@@ -257,7 +321,10 @@ width: 25rem;
     padding-right: 5%;
 }
 
-
+#signup-btn{
+    margin-top: 5rem;
+    margin-left: 3rem;
+}
 #title{
     text-align: center;
     font-size: 2rem;
@@ -265,12 +332,14 @@ width: 25rem;
     margin-bottom: 1rem;
 }
 
+
 #workout-name{
     margin-top: 3px;
 } 
 
 
 #workout-label{
+    margin-top: 5px;
     font-size: 20px;
 }
 
