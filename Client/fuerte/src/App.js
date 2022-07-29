@@ -25,13 +25,11 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <NavBar handleClick={handleClick} isToggled={isToggled} setUser={setAUser}/>
-      </header>
+
         <main>
 
           <Routes>
-            <Route path='/' element={<Landing />} />
+            <Route path='/' element={<Landing handleClick={handleClick} isToggled={isToggled} setUser={setAUser}/>} />
             <Route path='/fuerte' element={<Home user={user}/>}/>
             <Route path='/fuerte/:id' element={<ExerciseView/>}/>
             <Route path='/signup' element={<Signup setUser={setAUser}/>}/>

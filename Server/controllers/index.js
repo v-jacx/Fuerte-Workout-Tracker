@@ -145,25 +145,33 @@ const getUser = async (req, res)=>{
 }
 
 const login = async (req, res)=>{
-
-        const user = await User.find({'name': req.body.name})
-        if(user === null){
-            res.send('user does not exist')
-        }    
-        try{
-            if( await bcrypt.compare(req.body.password, user[0].password)){
-                await User.findByIdAndUpdate(user[0]._id, {loggedIn: true}, (err, result)=>{
+    
+    
+    try{
+        const user = await User.findOne({'name': req.body.name})
+        if(user){              
+            if( await bcrypt.compare(req.body.password, user.password)){
+                const id = user._id
+                await User.findByIdAndUpdate(id, {loggedIn: true}, (err, result)=>{
                     if(err){res.send(err)}
-                    else{res.send(result)}
-                })
-                res.send('logged in')
-            }else{
+                    else{res.send(result)}})}
+                else{
                 res.send('Incorrect Password')
-            }
+            }}else{res.send('User Does not exist')}
     }catch(e){
-        return res.status(500).json({error: e.message})
+       console.log(e)
     }
 }
+
+const signout = async (req, res)=>{
+    try{
+        const {id} = req.params
+        await User.findByIdAndUpdate(id, {loggedIn: false}, (err, result)=>{
+            if(err){res.send(err)}
+            else{res.send(result)}
+        })
+    }catch(e){console.log(e)}
+}
 module.exports = {
-    createUser, login, createWorkout, createExercise, setInfo, getUserWorkouts, getWorkoutExercises, updatePR, getUser, getExerciseInfo,
+    createUser, login, createWorkout, createExercise, setInfo, getUserWorkouts, getWorkoutExercises, updatePR, getUser, getExerciseInfo, signout
 }

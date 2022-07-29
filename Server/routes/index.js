@@ -24,5 +24,7 @@ router.get('/info/:id', controllers.getExerciseInfo)
 
 router.put('/updatePR', controllers.updatePR)
 
+router.put('/signout/:id', controllers.signout)
+
 
 module.exports = router;
