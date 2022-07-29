@@ -3,14 +3,16 @@ import {useEffect, useState} from 'react'
 import { useLocation } from 'react-router-dom'
 import axios from 'axios'
 import ExerciseTracking from '../components/ExerciseTracking'
+import Nav from '../components/Nav'
 
-export default function ExerciseView(){
+export default function ExerciseView(props){
     const [exercises, setExercises]=useState([])
     const [selectedExercise, setSelectedExercise]=useState('')
     const [exerciseClicked, setExerciseClicked]=useState(false)
     const location = useLocation()
     const id = location.state.id
     const workout = location.state.name
+    const user = location.state.user
 
 
 
@@ -30,7 +32,12 @@ const handleOnClick=(e)=>{
 }
 
     return (
+        <div>     
+            <header>
+                <Nav user={user}/>
+            </header>
         <div className='exercise-tracking'>
+    
         <div className='workout-container'>
             <div className='workout workout-label' id='label'>
                 <h1 id='workout-name'>{workout}</h1>              
@@ -45,7 +52,7 @@ const handleOnClick=(e)=>{
                 {exerciseClicked ? <ExerciseTracking exercise={selectedExercise}/>:null}
             
             </div>
-        </div>
+        </div></div>
 
     )
 }

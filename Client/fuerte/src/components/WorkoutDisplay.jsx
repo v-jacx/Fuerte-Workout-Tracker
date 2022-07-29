@@ -12,7 +12,7 @@ export default function WorkoutDisplay(props){
 
 
     const showWorkout = (workout)=>{
-        navigate(`${workout.name}`,{state:{name: `${workout.name}`,id: `${workout._id}`}})
+        navigate(`${workout.name}`,{state:{name: `${workout.name}`,id: `${workout._id}`,user: `${user}`}})
     }
     
     const getWorkouts = async ()=>{

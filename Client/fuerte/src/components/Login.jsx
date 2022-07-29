@@ -27,7 +27,7 @@ export default function Login(props){
         if(currentUser.data ==='User Does not exist'){
             message = 'user does not exist'
         }else{
-            setUser(currentUser)
+            setUser(currentUser.data)
             navigate('/fuerte')
         }
     }

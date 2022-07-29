@@ -55,7 +55,6 @@ export default function ExerciseTracking(props){
         setPR('')
     }
 
-
     const getInfo = async ()=>{
         const currentInfo = await axios.get(`http://localhost:3001/api/info/${exercise._id}`)
         setInfo(currentInfo.data.info)

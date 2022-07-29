@@ -11,7 +11,8 @@ export default function NavBar(props){
         <div id='nav-container'>
         <div className="nav-bar">
             <div className='fuerte-logo'>
-                <img src='../logo/fuerte-logo.png'alt='fuerte-logo'/>
+                <div className='fuerte-img'><img src='../logo/fuerte-logo.png'alt='fuerte-logo'/></div>
+                
             </div>
 
         <div id='login-container' onClick={handleClick}>

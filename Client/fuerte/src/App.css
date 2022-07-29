@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Old+Standard+TT&display=swap');
+
+*{
+    font-family: 'Lobster', cursive;
+font-family: 'Old Standard TT', serif;
+}
 html{
     background-color: #0a0a0a;
 }
 img{
-    height: 50px;
-    width: 40px;
+    height: 5rem;
+    width: 5rem; 
 }
 .App{
     background: linear-gradient(#68517f,#0a0a0a);
@@ -101,8 +107,10 @@ img{
 }
 
 .fuerte-logo{
-    margin-left: 8px;
+    margin-left: 20px;
+    margin-top: 5px;
 }
+
 
 .head{
     height: 20px;
@@ -322,6 +330,11 @@ width: 25rem;
 #signup-btn{
     margin-top: 5rem;
     margin-left: 3rem;
+}
+
+#subtract{
+    margin-left: 47rem;
+    margin-top: -10px;
 }
 #title{
     text-align: center;

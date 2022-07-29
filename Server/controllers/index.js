@@ -172,6 +172,8 @@ const signout = async (req, res)=>{
         })
     }catch(e){console.log(e)}
 }
+
+
 module.exports = {
-    createUser, login, createWorkout, createExercise, setInfo, getUserWorkouts, getWorkoutExercises, updatePR, getUser, getExerciseInfo, signout
+    createUser, login, createWorkout, createExercise, setInfo, getUserWorkouts, getWorkoutExercises, updatePR, getUser, getExerciseInfo, signout,
 }
