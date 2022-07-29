@@ -3,7 +3,7 @@ import {useState} from 'react'
 import { Link } from "react-router-dom"
 
 export default function Login(props){
-    const {handleClick} = props
+    const {handleClick, setUser} = props
 
     return(
         <div className='login-container'>

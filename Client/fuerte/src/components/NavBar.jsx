@@ -4,7 +4,7 @@ import Login from './Login'
 import SignUp from './SignUp'
 
 export default function NavBar(props){
-    const {handleClick, isToggled} = props
+    const {handleClick, isToggled, setUsername} = props
 
 
     return(
@@ -25,7 +25,7 @@ export default function NavBar(props){
 
         </div>
         <div>
-            {isToggled ? <Login handleClick={handleClick}/> : ''}
+            {isToggled ? <Login handleClick={handleClick} setUsername={setUsername}/> : ''}
         </div>
         </div>
     )

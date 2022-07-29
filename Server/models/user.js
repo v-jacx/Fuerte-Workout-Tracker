@@ -3,7 +3,7 @@ const bycrypt = require('bcrypt')
 
 const User = new Schema(
     {
-        name: {type: String, required: true},
+        name: {type: String, required: true, unique: true},
         email: {type: String, required: true, unique: true, lowercase: true},
         workouts: [{type: Schema.Types.ObjectId, ref: 'Workout'}],
         password: {type: String, minLength: [8, 'Password must have atleast 6 characters']},

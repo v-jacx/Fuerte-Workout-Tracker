@@ -8,11 +8,14 @@ const createUser = async (req, res)=> {
     try{
         const user = await new User(req.body)
         await user.save()
-        return res.status(200).json({
-            user,
+
+        await User.findByIdAndUpdate(user._id, {loggedIn: true}, (err, result)=>{
+            if(err){res.send(err)}
+            else{res.send(result)}
         })
+
     }catch(e){
-        return res.status(500).json({error: e.message})
+        console.log(e)
     }
 }
 

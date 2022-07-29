@@ -6,12 +6,10 @@ import axios from 'axios'
 
 export default function WorkoutDisplay(props){
     let navigate = useNavigate()
-    const {handleClick, user}=props
+    const {handleClick, user, clicks}=props
     const [userWorkouts, setUserWorkouts]= useState([])
     const userID = user._id
-    const userWorkoutIds = user.workouts
 
-    console.log(userWorkoutIds)
 
     const showWorkout = (workout)=>{
         navigate(`${workout.name}`,{state:{name: `${workout.name}`,id: `${workout._id}`}})
@@ -24,7 +22,7 @@ export default function WorkoutDisplay(props){
     
     useEffect(()=>{
         getWorkouts()
-    },[userWorkoutIds])
+    },[clicks])
 
 
     return(

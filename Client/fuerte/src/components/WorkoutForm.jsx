@@ -8,7 +8,7 @@ export default function WorkoutForm(props){
     const [isWorkoutActive, setIsWorkoutActive] = useState(true)
     const [workoutID, setWorkoutId] = useState('')
     const [inputData, setInputData]=useState([])
-    const {user} = props
+    const {user, setClicks} = props
     const userID = user._id
 
      const handleChange = (e)=>{
@@ -43,13 +43,24 @@ export default function WorkoutForm(props){
 }
 
 const handleClick= async ()=>{
+    if(isWorkoutActive===true){
+        const res = await axios.post('http://localhost:3001/api/workout',{
+         name: workoutTitle,
+         userId: userID,
+     })
+     
+     setWorkoutId(res.data._id)  
+     const array =[...inputData, []]
+     setInputData(array);
+     setIsWorkoutActive(false)
+    }else if(isWorkoutActive===false){
     inputData.map(async (data)=>{
         const res = await axios.post('http://localhost:3001/api/exercise',{
             name: data,
             workoutId: workoutID,
         })
     })
-
+    setClicks()}
     reset()
 }
 
