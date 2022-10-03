@@ -30,7 +30,7 @@ export default function WorkoutForm(props){
 
      const handleSubmit = async ()=>{
         if(isWorkoutActive===true){
-       const res = await axios.post('http://localhost:3001/api/workout',{
+       const res = await axios.post('https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/workout',{
         name: workoutTitle,
         userId: userID,
     })
@@ -44,7 +44,7 @@ export default function WorkoutForm(props){
 
 const handleClick= async ()=>{
     if(isWorkoutActive===true){
-        const res = await axios.post('http://localhost:3001/api/workout',{
+        const res = await axios.post('https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/workout',{
          name: workoutTitle,
          userId: userID,
      })
@@ -55,7 +55,7 @@ const handleClick= async ()=>{
      setIsWorkoutActive(false)
     }else if(isWorkoutActive===false){
     inputData.map(async (data)=>{
-        const res = await axios.post('http://localhost:3001/api/exercise',{
+        const res = await axios.post('https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/exercise',{
             name: data,
             workoutId: workoutID,
         })

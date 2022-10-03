@@ -27,7 +27,7 @@ const handleChange = (e) =>{
 const handleClick=async(e)=>{
     e.preventDefault()
     if(password === confirmPassword){
-            currentUser = await axios.post(`http://localhost:3001/api/signup`,{
+            currentUser = await axios.post(`https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/signup`,{
             name: name,
             email: email,
             password: password,
@@ -42,6 +42,7 @@ const handleClick=async(e)=>{
 }
 
     return (
+        <div className='center'>
         <div className='signup-container'>
             <form className="sign-up">
                 <h4>Username</h4>
@@ -49,12 +50,12 @@ const handleClick=async(e)=>{
                 <h4>Email</h4>
                 <input type='text' id='email' onChange={handleChange}></input>
                 <h4>Password</h4>
-                <input type='text' id='password' onChange={handleChange}></input>
+                <input type='password' id='password' onChange={handleChange}></input>
                 <h4>Confirm Password</h4>
-                <input type='text' id='confirm password' onChange={handleChange}></input>
+                <input type='password' id='confirm password' onChange={handleChange}></input>
                 <div style={{opacity: isActive? 1:0}}>Passwords need to match</div>
                 <div><button id='signup-btn' onClick={handleClick}>Sign Up</button></div>
             </form>
-        </div>
+        </div></div>
     )
 }

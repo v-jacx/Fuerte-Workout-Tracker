@@ -5,7 +5,7 @@ const {user} = props
 const navigate = useNavigate()
 
 const handleClick = async () =>{
-    await axios.put(`http://localhost:3001/api/signout/${user._id}`).then(navigate('/'))
+    await axios.put(`https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/signout/${user._id}`).then(navigate('/'))
 
 }
 

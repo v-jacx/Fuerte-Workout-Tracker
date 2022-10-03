@@ -2,17 +2,17 @@
 
 *{
     font-family: 'Lobster', cursive;
-font-family: 'Old Standard TT', serif;
+    font-family: 'Old Standard TT', serif;
 }
 html{
-    background-color: #0a0a0a;
+    background-color: #e0b59d;
 }
 img{
     height: 5rem;
     width: 5rem; 
 }
 .App{
-    background: linear-gradient(#68517f,#0a0a0a);
+    background-color: #e0b59d;
     background-size: cover;
 }
 
@@ -20,7 +20,7 @@ img{
     background-color: transparent;
     border: none;
     font-weight: bolder;
-    position: absolute;
+    position: fixed;
     margin-top: -4px;
     font-size: 30px;
 }
@@ -36,6 +36,7 @@ img{
 
 .add-workout{
     margin-left: 20rem;
+    position: fixed;
 }
 
 .account-text{
@@ -58,9 +59,14 @@ img{
     margin-right: 1rem;
     margin-top: -1px;
 }
+.container{
+    display: flex;
+    justify-content: flex-end;
+}
 .display{
     background-color: transparent;
-    width: 55rem;
+    grid-column: 2/4;
+
 }
 .exercise{
     margin-top: 3px;
@@ -75,12 +81,12 @@ img{
 
 }
 .exercise-container::-webkit-scrollbar-track{
-    background-color:#68517f;
+    background-color:#ffffff;
     border-radius: 5px;
 }
 
 .exercise-container::-webkit-scrollbar-thumb{
-    background-color: #41324c77;
+    background-color: #ffffff77;
     width: 3px;
 }
 
@@ -104,6 +110,8 @@ img{
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.15);
     border-radius: 10px;
+    width: 55rem;
+    height: 26rem;
 }
 
 .fuerte-logo{
@@ -122,9 +130,13 @@ img{
 }
 .home, .exercise-tracking{
     background-color: transparent;
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(3,1fr) ;
+    grid-template-rows: 3;
+    grid-gap: 15rem;
     height: 30rem;
+    max-width: 1522px;
+    margin-left: 10%;
 }
 
 .info-input{
@@ -147,12 +159,12 @@ img{
     align-items: center;
 }
 .large-logo{
+    width: 700px;
     height: 700px;
-    width: 600px;
 }
 
 .login{
-    background-color: white;
+    background-color: #cac5b6;
     position: absolute;
 }
 
@@ -162,8 +174,7 @@ img{
     padding-top: 20px;
     height: 19rem;
     width: 15rem;
-    background-color: white;
-    margin-left: 87%;
+    background-color: #cac5b6;
     position: absolute;
 }
 
@@ -182,14 +193,17 @@ img{
     text-align: center;
     top: 30rem;
     right: 30%;
-    position: absolute;
+    position: fixed;
 }
 
 .submit-form{
-    background-color: #ba99f882;
+    background-color: #b4b09d;
     border-radius: 5px;
+    margin-left: -5rem;
     width: 6rem;
     height: 2rem;
+    position:fixed
+
 }
 
 .title{
@@ -202,12 +216,19 @@ img{
 .title::placeholder{
     text-align: center;
     font-size: 20px;
-    color: rgba(255, 255, 255, 0.254);
+    color: rgb(255, 255, 255);
 }
 
 .tracking-labels{
     height: 1.5rem;
     width: 8rem;
+}
+.center{
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
 }
 
 .signup-container{
@@ -217,12 +238,12 @@ img{
     background-color: #b4b4b45d;
     height: 30rem;
     width: 20rem;
-    margin-left: 50%;
-    margin-top: 6%;
 }
 
+
+
 .workout{
-border: 1px solid rgba(227, 172, 252, 0.458);
+border: 1px solid #bf3792;
 border-radius: 10px;
 display: flex;
 justify-content: center;
@@ -237,7 +258,7 @@ width: 25rem;
 
 .workout-label{
     height: 2rem;
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: #6e402f68;
 }
 
 
@@ -270,7 +291,6 @@ width: 25rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
 }
 
 #info-bar{
@@ -295,7 +315,7 @@ width: 25rem;
     background-color: rgba(21, 20, 20, 0.163);
 }
 #label{
-    background-color: #9e70cc54;
+    background-color: #00000020;
     height: 3rem;
     margin-top: 2px;
 }
@@ -316,7 +336,7 @@ width: 25rem;
     margin-top:2%;
     margin-bottom: 20%;
     padding-right: 10px;
-    color: #ffffff;
+    color: #bf3792;
 }
 
 #max-weight, #elem-maxWeight{
@@ -366,15 +386,15 @@ width: 25rem;
     height: 2rem;
     margin-left: 40%;
     margin-top: 10px;
-    position: absolute;
+    position: fixed;
     background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.171);
+    border: 2px solid #bf379287;
     border-radius: 5px;
     color: white;
 }
 
 #PR::placeholder{
-    color: white;
+    color: rgba(255, 255, 255, 0.999);
     font-size: 15px;
     text-align: center;
 }

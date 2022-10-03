@@ -16,7 +16,7 @@ export default function WorkoutDisplay(props){
     }
     
     const getWorkouts = async ()=>{
-        const workouts = await axios.get(`http://localhost:3001/api/workout/${userID}`)
+        const workouts = await axios.get(`https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/${userID}`)
         setUserWorkouts(workouts.data.userWorkouts)
     }
     

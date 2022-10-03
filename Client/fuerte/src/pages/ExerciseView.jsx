@@ -17,7 +17,7 @@ export default function ExerciseView(props){
 
 
 const getExercises = async ()=>{
-    const workoutExercises = await axios.get(`http://localhost:3001/api/exercise/${id}`)
+    const workoutExercises = await axios.get(`https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/exercise/${id}`)
     setExercises(workoutExercises.data.exercises)
 }    
 
@@ -49,7 +49,7 @@ const handleOnClick=(e)=>{
                     ))}
         </div>
             <div className="display workout-container">
-                {exerciseClicked ? <ExerciseTracking exercise={selectedExercise}/>:null}
+                {exerciseClicked ? <ExerciseTracking exercise={selectedExercise} setExercise={setSelectedExercise}/>:null}
             
             </div>
         </div></div>

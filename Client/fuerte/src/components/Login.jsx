@@ -9,6 +9,7 @@ export default function Login(props){
     const [username, setUsername]=useState('')
     const [password, setPassword]= useState('')
     let message = '';
+    
     const handleChange =  (e) =>{
         if(e.target.id === 'login-user'){
             setUsername(e.target.value)
@@ -19,7 +20,7 @@ export default function Login(props){
 
     const handleSubmit = async(e)=>{
         e.preventDefault()
-        const currentUser = await axios.post(`http://localhost:3001/api/login`,{
+        const currentUser = await axios.post(`https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/login`,{
         name: username,
         password: password,
         })
@@ -34,12 +35,13 @@ export default function Login(props){
 
 
     return(
+        <div className='container'>
         <div className='login-container'>
             <form className="login">
                 <h4>Username</h4>
                 <input type='text' id='login-user' onChange={handleChange}></input>
                 <h4>Password</h4>
-                <input type='text' id='login-password' onChange={handleChange}></input>
+                <input type='password' id='login-password' onChange={handleChange}></input>
                 <div className="account-text">
                     <h4 >Need an account?</h4>
                     <Link to='/signup' className='account-link' onClick={handleClick}>Create Account</Link>
@@ -48,6 +50,6 @@ export default function Login(props){
                 
                 <div><button id='login-btn' onClick={handleSubmit}>Login</button></div>
             </form>
-        </div>
+        </div></div>
     )
 }

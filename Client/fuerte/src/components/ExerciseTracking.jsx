@@ -2,7 +2,7 @@ import axios from 'axios'
 import {useState, useEffect} from 'react'
 
 export default function ExerciseTracking(props){
-    const {exercise} = props
+    const {exercise, setExercise} = props
     const [isActive, setIsActive]=useState(false)
     const [date, setDate]=useState('')
     const [setsAndReps, setSetsAndReps]=useState('')
@@ -10,7 +10,7 @@ export default function ExerciseTracking(props){
     const [PR, setPR]=useState('')
     const [info, setInfo]=useState([])
 
-
+    console.log(exercise)
 
     const handleClick=()=> setIsActive(true)
 
@@ -29,9 +29,9 @@ export default function ExerciseTracking(props){
        }
     }
 
-    const handleSave= async()=>{
+    const handleSave= async(e)=>{
         if(date !== ''&& setsAndReps !== ''&& maxWeight!== ''){
-            const res = await axios.post(`http://localhost:3001/api/setInfo`,{
+            const res = await axios.post(`https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/setInfo`,{
                 date: date,
                 sets_reps: setsAndReps,
                 maxWeight: maxWeight,
@@ -39,12 +39,12 @@ export default function ExerciseTracking(props){
             })   
         }
         if( PR !== ''){
-            const res = await axios.put('http://localhost:3001/api/updatePR',{
+            const res = await axios.put('https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/updatePR',{
                 id: exercise._id,
                 personalR: PR,
             })
+            setExercise(res.data.exercise)
         }
-
         reset()
     }
 
@@ -56,16 +56,15 @@ export default function ExerciseTracking(props){
     }
 
     const getInfo = async ()=>{
-        const currentInfo = await axios.get(`http://localhost:3001/api/info/${exercise._id}`)
+        const currentInfo = await axios.get(`https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/info/${exercise._id}`)
         setInfo(currentInfo.data.info)
     }
 
     
     useEffect(()=>{
         getInfo()
-    },[PR, exercise])
+    },[exercise])
 
-    console.log(info)
     return(
         <div>
             <div id='exercise-tracking-form'>
@@ -96,7 +95,7 @@ export default function ExerciseTracking(props){
                 <input type='text' className="info-input" id='max-weight' placeholder="Max Weight" disabled={!isActive? true:false} onChange={handleChange}></input>
             </div>
             <div className='submit-btn'>
-                <button type='submit' id='save-exercise-info' className='submit-form' onClick={handleSave}>SAVE</button>
+                <button type='submit' className='submit-form' onClick={handleSave}>SAVE</button>
             </div>
             </div>
         </div>

@@ -9,7 +9,7 @@ export default function Landing(props){
             <NavBar handleClick={handleClick} isToggled={isToggled} setUser={setUser}/>
         </header>
         <div className='landing'>
-              <img className='large-logo 'src='../logo/fuerte-logo.png' alt='fuerte logo'/>
+              <img className='large-logo 'src='../logo/fuerte-logo.GIF' alt='fuerte logo'/>
         </div>
         </div>
     )
