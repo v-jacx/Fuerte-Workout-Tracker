@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-let MONGODB_URI = "mongodb://127.0.0.1:27017/fuerteDatabase"
+let MONGODB_URI = "mongodb+srv://velasquez_j:fuertedb123@fuerte-cluster.5arztaa.mongodb.net/?retryWrites=true&w=majority"
 
 mongoose
     .connect(MONGODB_URI)
@@ -14,3 +14,7 @@ mongoose
 const db = mongoose.connection
 
 module.exports = db
+
+
+
+

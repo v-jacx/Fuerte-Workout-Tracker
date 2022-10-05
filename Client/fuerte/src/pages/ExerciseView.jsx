@@ -17,7 +17,7 @@ export default function ExerciseView(props){
 
 
 const getExercises = async ()=>{
-    const workoutExercises = await axios.get(`https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/exercise/${id}`)
+    const workoutExercises = await axios.get(`https://fuerte-api.onrender.com/api/exercise/${id}`)
     setExercises(workoutExercises.data.exercises)
 }    
 

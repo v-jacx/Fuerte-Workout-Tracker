@@ -1,5 +1,5 @@
 const {User, Workout, Exercise, Info} = require('../models')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const { response } = require('express')
 const user = require('../models/user')
 
@@ -126,8 +126,10 @@ const updatePR = async (req, res)=>{
         const {id, personalR} = req.body
         Exercise.findByIdAndUpdate(id, {personalRecord: personalR},(err, result)=>{
             if(err){console.log(err)}
-            else{res.send(result)}
         })
+
+        const exercise = await Exercise.findById(id)
+        res.status(200).json({exercise})
 
 }catch(e){
     console.log(e)
@@ -173,7 +175,6 @@ const signout = async (req, res)=>{
     }catch(e){console.log(e)}
 }
 
-
 module.exports = {
-    createUser, login, createWorkout, createExercise, setInfo, getUserWorkouts, getWorkoutExercises, updatePR, getUser, getExerciseInfo, signout,
+    createUser, login, createWorkout, createExercise, setInfo, getUserWorkouts, getWorkoutExercises, updatePR, getUser, getExerciseInfo, signout
 }

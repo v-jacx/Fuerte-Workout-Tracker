@@ -31,7 +31,7 @@ export default function ExerciseTracking(props){
 
     const handleSave= async(e)=>{
         if(date !== ''&& setsAndReps !== ''&& maxWeight!== ''){
-            const res = await axios.post(`https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/setInfo`,{
+            const res = await axios.post(`https://fuerte-api.onrender.com/api/setInfo`,{
                 date: date,
                 sets_reps: setsAndReps,
                 maxWeight: maxWeight,
@@ -39,7 +39,7 @@ export default function ExerciseTracking(props){
             })   
         }
         if( PR !== ''){
-            const res = await axios.put('https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/updatePR',{
+            const res = await axios.put('https://fuerte-api.onrender.com/api/updatePR',{
                 id: exercise._id,
                 personalR: PR,
             })
@@ -56,7 +56,7 @@ export default function ExerciseTracking(props){
     }
 
     const getInfo = async ()=>{
-        const currentInfo = await axios.get(`https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/info/${exercise._id}`)
+        const currentInfo = await axios.get(`https://fuerte-api.onrender.com/api/info/${exercise._id}`)
         setInfo(currentInfo.data.info)
     }
 

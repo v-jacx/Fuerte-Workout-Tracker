@@ -55,7 +55,7 @@ const handleClick= async ()=>{
      setIsWorkoutActive(false)
     }else if(isWorkoutActive===false){
     inputData.map(async (data)=>{
-        const res = await axios.post('https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/exercise',{
+        const res = await axios.post('https://fuerte-api.onrender.com/api/exercise',{
             name: data,
             workoutId: workoutID,
         })

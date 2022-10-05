@@ -20,7 +20,7 @@ export default function Login(props){
 
     const handleSubmit = async(e)=>{
         e.preventDefault()
-        const currentUser = await axios.post(`https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/login`,{
+        const currentUser = await axios.post(`https://fuerte-api.onrender.com/api/login`,{
         name: username,
         password: password,
         })

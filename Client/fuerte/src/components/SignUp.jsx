@@ -27,7 +27,7 @@ const handleChange = (e) =>{
 const handleClick=async(e)=>{
     e.preventDefault()
     if(password === confirmPassword){
-            currentUser = await axios.post(`https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/signup`,{
+            currentUser = await axios.post(`https://fuerte-api.onrender.com/api/signup`,{
             name: name,
             email: email,
             password: password,
