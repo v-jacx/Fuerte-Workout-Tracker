@@ -310,7 +310,7 @@ img{
     text-align: center;
 }
 
-@media (min-width: 750px) and (max-width: 900px){
+@media (min-width: 750px) and (max-width: 900px) and (-webkit-min-device-pixel-ratio:0){
     .home, .exercise-tracking{
         margin-left: 3%;
     }
@@ -335,7 +335,7 @@ img{
 }
 
 
-@media (max-width: 414px){
+@media (max-width: 414px) and (-webkit-min-device-pixel-ratio:0){
 .center{
     margin-left: -36%;
 }
