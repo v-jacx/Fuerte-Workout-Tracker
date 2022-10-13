@@ -30,7 +30,7 @@ export default function WorkoutForm(props){
 
      const handleSubmit = async ()=>{
         if(isWorkoutActive===true){
-       const res = await axios.post('https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/workout',{
+       const res = await axios.post('https://fuerte-api.onrender.com/api/workout',{
         name: workoutTitle,
         userId: userID,
     })
@@ -44,7 +44,7 @@ export default function WorkoutForm(props){
 
 const handleClick= async ()=>{
     if(isWorkoutActive===true){
-        const res = await axios.post('https://j2e1hy2ao5.execute-api.us-east-1.amazonaws.com/latest/api/workout',{
+        const res = await axios.post('https://fuerte-api.onrender.com/api/workout',{
          name: workoutTitle,
          userId: userID,
      })
@@ -78,8 +78,7 @@ const reset=()=>{
             <div className='form-container'>
                 <div className='workout-title'>
                     <input  type="text" className='title' placeholder='Workout Title' value={workoutTitle} onChange={handleChange} id="workout-title" disabled={!isWorkoutActive}></input>
-                    <button type="submit" className='add exercise-add' onClick={handleSubmit} id='workout-submit' style={{opacity: isWorkoutActive? 1:0, pointerEvents: isWorkoutActive? " ":"none"}} >+</button>
-                    <button type="submit" className='add exercise-add' onClick={handleAdd} style={{opacity: isWorkoutActive? 0:1, pointerEvents: isWorkoutActive? "none":""}} >+</button>
+                    {isWorkoutActive ?  <button type="submit" className='add exercise-add' onClick={handleSubmit} id='workout-submit' style={{pointerEvents: isWorkoutActive? " ":"none"}} >add exercise</button> : <button type="submit" className='add exercise-add' onClick={handleAdd} style={{pointerEvents: isWorkoutActive? "none":""}} >add exercise</button>}
                 </div>
                 <div className='exercise-container'>
                         {inputData.map((data, index)=>(
@@ -87,9 +86,9 @@ const reset=()=>{
                         )
                         )}
                 </div>
-                <div className='submit-btn'>
+                {isWorkoutActive ? '' : <div className='submit-btn'>
                             <button type='submit' className="submit-form" onClick={handleClick}>Done</button>
-                </div>
+                </div>}
                 </div>
         </div>
     )

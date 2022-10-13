@@ -16,7 +16,7 @@ export default function WorkoutDisplay(props){
     }
     
     const getWorkouts = async ()=>{
-        const workouts = await axios.get(`https://fuerte-api.onrender.com/api/${userID}`)
+        const workouts = await axios.get(`https://fuerte-api.onrender.com/api/workout/${userID}`)
         setUserWorkouts(workouts.data.userWorkouts)
     }
     

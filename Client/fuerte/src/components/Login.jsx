@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 import {useState} from 'react'
-import { Link, Navigate, useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 export default function Login(props){
     const {handleClick, setUser} = props
@@ -45,9 +45,8 @@ export default function Login(props){
                 <div className="account-text">
                     <h4 >Need an account?</h4>
                     <Link to='/signup' className='account-link' onClick={handleClick}>Create Account</Link>
-                    <div id='msg'>{message}</div>
                 </div>
-                
+                <div id='msg'>{message}</div>
                 <div><button id='login-btn' onClick={handleSubmit}>Login</button></div>
             </form>
         </div></div>

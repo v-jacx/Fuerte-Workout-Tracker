@@ -14,7 +14,7 @@ const handleClick = async () =>{
         <div className="nav-bar">
             <Link to='/fuerte' user={user}>
             <div className='fuerte-logo'>
-                <img src='../logo/fuerte-logo.png'alt='fuerte-logo'/>
+                <img src='../logo/fuerte-logo2.png'alt='fuerte-logo'/>
             </div>
             </Link>
         <div id='login-container' onClick={handleClick}>

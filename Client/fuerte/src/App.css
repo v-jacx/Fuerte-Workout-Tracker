@@ -5,49 +5,36 @@
     font-family: 'Old Standard TT', serif;
 }
 html{
-    background-color: #e0b59d;
+    background-color: #0d2c4f;
 }
 img{
     height: 5rem;
     width: 5rem; 
 }
 .App{
-    background-color: #e0b59d;
+    background-color: #0d2c4f;
     background-size: cover;
+}
+.account-link{
+    color: #bf3792;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+}
+
+.account-text{
+    font-size: 15px;
+    text-align: center;
 }
 
 .add{
     background-color: transparent;
     border: none;
     font-weight: bolder;
-    position: fixed;
     margin-top: -4px;
-    font-size: 30px;
-}
-
-.add-exercise{
-    margin-left: 20px;
-}
-
-.add-info{
-    margin-left: 47rem;
-    margin-top: -0.6rem;
-}
-
-.add-workout{
-    margin-left: 20rem;
-    position: fixed;
-}
-
-.account-text{
-    font-size: 13px;
-    text-align: center;
-}
-
-.account-link{
-    color: rgb(0, 81, 255);
-    background-color: transparent;
-    border: none;
+    margin-left: 15px;
+    font-size: 25px;
 }
 
 .body{
@@ -59,20 +46,40 @@ img{
     margin-right: 1rem;
     margin-top: -1px;
 }
+
+.center{
+    position: fixed;
+    top: 10%;
+    left: 45%;
+    margin-top: -50px;
+    margin-left: -100px;
+}
+
 .container{
     display: flex;
     justify-content: flex-end;
 }
+
 .display{
     background-color: transparent;
     grid-column: 2/4;
 
 }
-.exercise{
-    margin-top: 3px;
+
+.exercise-add{
+    font-size: 15px;
+    margin-right: 20px;
+    margin-top: 2px;
+    border: 1px solid #bf3792;
+    border-radius: 10px;
+    width: 9rem;
+    height: 2rem;
+    color: white;
 }
+
 .exercise-container{
-    height: 20rem;
+    height: 10rem;
+    width: 100%;
     overflow-y: auto;
 }
 
@@ -90,35 +97,15 @@ img{
     width: 3px;
 }
 
-.exercise-add{
-    margin-left: 52rem;
-    margin-top: 2px;
-}
-
-.exercise-tracking{
-    display: flex;
-    justify-content: space-between;
-}
-
-.form{
-    display: flex;
-    justify-content: space-between;
-}
-
 .form-container{
     display: flex;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.189);
     border-radius: 10px;
-    width: 55rem;
-    height: 26rem;
+    width: 98.75%;
+    height: 100%;
+    padding: 5px;
 }
-
-.fuerte-logo{
-    margin-left: 20px;
-    margin-top: 5px;
-}
-
 
 .head{
     height: 20px;
@@ -128,6 +115,7 @@ img{
     margin-left: 5px;
     margin-top: 4px;
 }
+
 .home, .exercise-tracking{
     background-color: transparent;
     display: grid;
@@ -135,100 +123,43 @@ img{
     grid-template-rows: 3;
     grid-gap: 15rem;
     height: 30rem;
-    max-width: 1522px;
-    margin-left: 10%;
+    margin-left: 27%;
 }
 
-.info-input{
-    text-align: center;
-    width: 8rem;
-    height: 1.5rem;
-    font-size: 15px;
-    background-color: transparent;
-    border: none;
-    color: rgb(255, 255, 255);
-}
-
-.info-input::placeholder{
-    color: rgba(255, 255, 255, 0.594);
-}
-
-.landing{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .large-logo{
-    width: 700px;
-    height: 700px;
+    width: 550px;
+    height: 550px;
+    margin-top: 3%;
+    margin-left: 30%;
 }
-
-.login{
-    background-color: #cac5b6;
-    position: absolute;
-}
-
 .login-container{
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    height: 19rem;
-    width: 15rem;
-    background-color: #cac5b6;
-    position: absolute;
+     background: rgba(255, 255, 255, 0.283);
+     backdrop-filter: blur(1rem);
+     padding: 3% 5%;
+     position: fixed;
+     margin-right: 15%;
 }
 
+.login-container::before{
+    content: ' ';
+    margin-top: -58px;
+    margin-left: 11rem;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid rgba(255, 255, 255, 0.283);
+    position: absolute;
+}
 .login-logo{
     margin-top: 7%;
     margin-bottom: 0;
 }
+
 .nav-bar{
     display: flex;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-.submit-btn{
-    background-color: transparent;
-    text-align: center;
-    top: 30rem;
-    right: 30%;
-    position: fixed;
-}
-
-.submit-form{
-    background-color: #b4b09d;
-    border-radius: 5px;
-    margin-left: -5rem;
-    width: 6rem;
-    height: 2rem;
-    position:fixed
-
-}
-
-.title{
-    width: 50rem;
-    height: 2rem;
-    background-color: transparent;
-    border: none;
-}
-
-.title::placeholder{
-    text-align: center;
-    font-size: 20px;
-    color: rgb(255, 255, 255);
-}
-
-.tracking-labels{
-    height: 1.5rem;
-    width: 8rem;
-}
-.center{
-    position: fixed;
-    top: 25%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -100px;
+    align-items: center;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .signup-container{
@@ -238,54 +169,76 @@ img{
     background-color: #b4b4b45d;
     height: 30rem;
     width: 20rem;
+    border-radius: 10px;
 }
 
+.submit-form{
+    background-color: #ffffffdc;
+    border-radius: 5px;
+    margin-left: 45%;
+    width: 6rem;
+    height: 2rem;
+    font-weight: bold;
+}
 
+.title{
+    width: 98%;
+    height: 2rem;
+    text-align: center;
+    margin-right: -25%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.title::placeholder{
+    margin-right: 10%;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
 
 .workout{
-border: 1px solid #bf3792;
-border-radius: 10px;
-display: flex;
-justify-content: center;
-width: 25rem;
+    border: 1px solid #bf3792;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
 }
-
+    
 .workout-container{
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 10px;
     margin-top: 4rem;
+    width: 45rem;
 }
 
 .workout-label{
-    height: 2rem;
-    background-color: #6e402f68;
+    width: 100%;
+    background-color: #00000068;
+    color: white;
 }
-
 
 .workout-title{
     background: transparent;
     display:flex;
-    flex-direction: row;
+    align-items: center;
 }
+
+.workouts-container{
+    border: 2px solid #bf3792;
+}
+
 #current-PR{
     text-align: center;
     font-size: 20px;
-    margin-top: 1.25rem;
-    margin-bottom: 1rem;
-    margin-right: 25%;
-    margin-left: 5%;
     color: white;
-}
-
-#date, #elem-date{
-    padding-right: 9%;
 }
 
 #exercise-title{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
 }
-
-
 
 #form{
     display: flex;
@@ -300,29 +253,12 @@ width: 25rem;
     justify-content: space-evenly;
 }
 
-#info-form{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: rgba(21, 20, 20, 0.163);
-
-}
-
-#info-display{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: rgba(21, 20, 20, 0.163);
-}
-#label{
-    background-color: #00000020;
-    height: 3rem;
-    margin-top: 2px;
-}
-
 #login-btn{
+    height: 2rem;
+    width: 4rem;
     margin-left: 3rem;
     margin-top: 1rem;
+    font-weight: bold;
 }
 
 #login-container{
@@ -339,39 +275,17 @@ width: 25rem;
     color: #bf3792;
 }
 
-#max-weight, #elem-maxWeight{
-    padding-right: 8%;
-}
-
-#set-reps, #elem-sets-reps{
-    padding-right: 5%;
+#nav-container{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
 }
 
 #signup-btn{
-    margin-top: 5rem;
+    margin-top: 1rem;
     margin-left: 3rem;
-}
-
-#subtract{
-    margin-left: 47rem;
-    margin-top: -10px;
-}
-#title{
-    text-align: center;
-    font-size: 2rem;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-
-#workout-name{
-    margin-top: 3px;
-} 
-
-
-#workout-label{
-    margin-top: 5px;
-    font-size: 20px;
+    height: 2rem;
+    width: 5rem;
+    font-weight: bold;
 }
 
 #workout-title{
@@ -384,9 +298,6 @@ width: 25rem;
 #PR{
     width: 4rem;
     height: 2rem;
-    margin-left: 40%;
-    margin-top: 10px;
-    position: fixed;
     background-color: transparent;
     border: 2px solid #bf379287;
     border-radius: 5px;
@@ -397,4 +308,82 @@ width: 25rem;
     color: rgba(255, 255, 255, 0.999);
     font-size: 15px;
     text-align: center;
+}
+
+@media (min-width: 750px) and (max-width: 900px){
+    .home, .exercise-tracking{
+        margin-left: 3%;
+    }
+
+    .nav-bar{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .large-logo{
+        width: 400px;
+        height: 400px;
+        margin-top: 10%;
+        margin-left: 25%;
+    }
+    .login-container{
+        margin-right: 0;
+   }
+   .login-container::before{
+    margin-top: -38px;
+    margin-left: 65%;
+}
+}
+
+
+@media (max-width: 414px){
+.center{
+    margin-left: -36%;
+}
+
+.exercise-add{
+    font-size: 12px;
+    width: 10rem;
+}
+
+.form-container{
+    width: 97.75%;
+}
+
+.home, .exercise-tracking{
+    margin-left: 5%;
+}
+.nav-bar{
+    margin-left: 0;
+    margin-right: 0;
+}
+.large-logo{
+    width: 275px;
+    height: 275px;
+    margin-top: 30%;
+    margin-left: 15%;
+}
+.login-container{
+    margin-right: 0;
+}
+.login-container::before{
+    margin-top: -27px;
+    margin-left: 65%;
+}
+.submit-form{
+    margin-left: 38%;
+}
+.title{
+    font-size: 15px;
+}
+
+.title::placeholder{
+    font-size: 15px;
+}
+.workout-container{
+    width: 350px;
+}
+
+#workout-label{
+    font-size: 15px;
+}
 }

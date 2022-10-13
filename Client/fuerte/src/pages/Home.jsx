@@ -21,14 +21,12 @@ return (
         <header>
             <Nav user={user}/>
         </header>
-    <div className='home'>
-
-         <div className='workout-container'>
-            <WorkoutDisplay handleClick={handleClick} user={user} clicks={clicks}/>
+        <div className='home'>
+            <div className='workout-container'>
+                <WorkoutDisplay handleClick={handleClick} user={user} clicks={clicks}/>
+                {isActive? <WorkoutForm user={user} setClicks={updateClicks}/>:''}
             </div>
-        <div className="display workout-container">
-            {isActive? <WorkoutForm user={user} setClicks={updateClicks}/>:''}
         </div>
-    </div></div>
+    </div>
 );
 }

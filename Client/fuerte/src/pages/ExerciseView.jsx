@@ -1,4 +1,3 @@
-import {useParams} from 'react-router-dom'
 import {useEffect, useState} from 'react'
 import { useLocation } from 'react-router-dom'
 import axios from 'axios'
@@ -37,20 +36,19 @@ const handleOnClick=(e)=>{
                 <Nav user={user}/>
             </header>
         <div className='exercise-tracking'>
-    
-        <div className='workout-container'>
-            <div className='workout workout-label' id='label'>
-                <h1 id='workout-name'>{workout}</h1>              
-            </div>
-            {exercises.map((exercise)=>(
-                <div key={exercise.name} className='workout workout-label workouts-container' onClick={()=>handleOnClick(exercise)}>
-                    <h3 className='exercise' >{exercise.name}</h3>
-                </div>  
-                    ))}
-        </div>
-            <div className="display workout-container">
-                {exerciseClicked ? <ExerciseTracking exercise={selectedExercise} setExercise={setSelectedExercise}/>:null}
-            
+            <div className='workout-container'>
+                <div className='workout workout-label' id='label'>
+                    <h1 id='workout-name'>{workout}</h1>              
+                </div>
+                {exercises.map((exercise)=>(
+                    <div key={exercise.name} className='workout workout-label workouts-container' onClick={()=>handleOnClick(exercise)}>
+                        <h3 className='exercise' >{exercise.name}</h3>
+                    </div>  
+                        ))}
+                    {exerciseClicked ? <div className="display workout-container">
+                    <ExerciseTracking exercise={selectedExercise} setExercise={setSelectedExercise}/></div>:null}
+                
+
             </div>
         </div></div>
 
